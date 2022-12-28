@@ -1,0 +1,17 @@
+docker rm 24a5edb6dbb7 --force
+
+docker run -d --restart unless-stopped --pull always --name exorderMaxXX exordelabs/exorde-cli -m 0xB0Ef40B2F344B7fcC24af84491f781A324293Fce -l 2
+
+
+exordeMXX
+exordeMaXXX
+exordeMiXXX
+exordeAXX
+0xB0Ef40B2F344B7fcC24af84491f781A324293Fce
+
+e7921f191f5a
+0c33fa7b9176
+
+
+3c62e582dfda   a92af1296685   "python -u ./Launche…"   3 weeks ago   Up 9 hours             exordeRich
+24a5edb6dbb7   a92af1296685   "python -u ./Launche…"   3 weeks ago   Up 9 hours             exordeMaxXX

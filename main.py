@@ -1,2 +1,2 @@
-file = open('exorde.txt', encoding='utf-8')
+file = open('exorde.txt')
 print(file.read())
