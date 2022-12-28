@@ -1,2 +1,4 @@
-file = open('exorde.txt')
-print(file.read())
+file = open(r'test.txt')
+for i in file.read():
+    if i.is():
+        print(i)
