@@ -1,3 +1,9 @@
-lst = [[1,2,3], [4,5],['hi'], [6,7,7,8,9]]
-print(sum(lst, []))
+try:
+    f = open("test.txt")
+    r = f.read(1)
+    f.close()
 
+except FileNotFoundError:
+    print('Невозможно открыть файл')
+finally:
+    print(f.closed)

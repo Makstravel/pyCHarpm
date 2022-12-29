@@ -1,5 +1,4 @@
-h
-he
-hel
-hell
-hello
+docker rm 24a5edb6dbb7 --force
+
+docker run -d --restart unless-stopped --pull always --name exorderMaxXX exordelabs/exorde-cli -m 0xB0Ef40B2F344B7fcC24af84491f781A324293Fce -l 2
+
