@@ -1,5 +1,11 @@
+import pickle
+
+
 try:
-    with open("test2.txt", 'w', encoding='utf-8') as file:
-        file.write(input(end='\n'))
+    with open("test2.txt", 'w') as file:
+        file.write(input())
+
 except:
     print('Невозможно открыть файл')
+
+
