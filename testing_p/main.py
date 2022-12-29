@@ -1,9 +1,5 @@
 try:
-    f = open("test.txt", 'w')
-    r = f.read(1)
-    f.close()
-
-except FileNotFoundError:
+    with open("test2.txt", 'w', encoding='utf-8') as file:
+        file.write(input(end='\n'))
+except:
     print('Невозможно открыть файл')
-finally:
-    print(f.closed)
