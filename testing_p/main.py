@@ -1,10 +1,12 @@
-def counter_add(k):
-    def plus_value():
-        return k+5
+# ввод числа N
+N = int(input())
 
-    return plus_value
-
-cnt= counter_add()
-k = int(input())
-print(cnt())
-
+# здесь задается функция fib_rec (переменную N не менять!)
+def fib_rec(N, f=[]):
+    if len(f)<N:
+        if len(f) < 2:
+            f.append(1)
+        else:
+            f.append(f[-2] + f[-1])
+        fib_rec(N, f)
+        return f
