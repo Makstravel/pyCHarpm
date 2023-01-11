@@ -1,5 +1,6 @@
 def double_it(func):
     def doubl(*args, **kwargs):
-        func(*args, **kwargs)
+        s= func(*args, **kwargs)
+        return s+s
 
-    return doubl*doubl
+    return doubl
