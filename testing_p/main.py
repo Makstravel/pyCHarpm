@@ -1,12 +1,20 @@
-# ввод числа N
-N = int(input())
 
-# здесь задается функция fib_rec (переменную N не менять!)
-def fib_rec(N, f=[]):
-    if len(f)<N:
-        if len(f) < 2:
-            f.append(1)
-        else:
-            f.append(f[-2] + f[-1])
-        fib_rec(N, f)
-        return f
+def text_decor(wfunc):
+    def wrap():
+        print('Hello')
+        wfunc()
+        print('Goodbye')
+    return wrap
+
+@text_decor
+def simple_func():
+    print('I just simple python func')
+
+simple_func()
+
+
+@text_decor
+def multiply(num1, num2):
+    print(num1 * num2)
+
+multiply(3, 5)
