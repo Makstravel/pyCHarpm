@@ -1,4 +1,6 @@
 def get_sort(d):
+    '''Сортировка словаря с выводом
+    только значений словаря'''
     s ={i:j for i,j in sorted(d.items(), reverse=True)}
     return list(s.values())
 

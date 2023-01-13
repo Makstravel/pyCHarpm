@@ -1,8 +1,7 @@
+def get_sort(d):
+    s ={i:j for i,j in sorted(d.items(), reverse=True)}
+    return list(s.values())
 
-def get_add(a, b):
-    if isinstance(a, int) and isinstance(b, int):
-        return a + b
-    elif isinstance(a, str) and isinstance(b, str):
-        return a + b
-    else:
-        return None
+
+d2=get_sort({'cat': 'кот', 'horse': 'лошадь', 'tree': 'дерево', 'dog': 'собака', 'book': 'книга'})
+print(d2)
