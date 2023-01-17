@@ -14,6 +14,3 @@ for i in s:
         print(f' {i}-YES')
     else:
         print(f' {i}-NO')
-
-
-
