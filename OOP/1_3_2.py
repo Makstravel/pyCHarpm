@@ -7,6 +7,3 @@ def create_instance(n: int) -> Config:
     for i in range(1, n+1):
         setattr(obj, f'attribute{i}', f'value{i}')
     return obj
-
-
-print(Config.__dict__)
