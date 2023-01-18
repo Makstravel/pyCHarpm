@@ -1,12 +1,25 @@
-class Config:
-    pass
+class Robot:
+    name = ''
+
+    def set_name(self, name):
+        self.name = name
+
+    def say_hello(self, name):
+        if self.name = name:
+
+            print('Hello, human! My name is', name)
+        else:
+            print('У робота нет имени')
+
+    def say_bye(self):
+        print('See u later alligator')
 
 
-def create_instance(n: int) -> Config:
-    obj = Config()
-    for i in range(1, n+1):
-        setattr(obj, f'attribute{i}', f'value{i}')
-    return obj
+c3po = Robot()
+r2d2 = Robot()
 
+c3po.say_hello()
+c3po.say_bye()
 
-print(Config.__dict__)
+r2d2.say_hello()
+r2d2.say_bye()

@@ -1,10 +1,18 @@
 class Robot:
+    name = ''
+    def set_name(self, name):
+        self.name = name
 
-    def say_hello(self):
-        print('Hello, human! My name is C-3PO')
+    def say_hello(self, name):
+        if self.name = name:
+
+            print('Hello, human! My name is', name)
+        else:
+            print('У робота нет имени')
 
     def say_bye(self):
         print('See u later alligator')
+        
 
 
 c3po = Robot()
