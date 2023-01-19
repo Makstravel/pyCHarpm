@@ -1,24 +1,22 @@
-class Robot:
+class Counter:
 
-    def set_name(self, name):
-        self.name = name
+    def start_from(self, name=0):
+        self.name= name
 
-    def say_hello(self):
-        if hasattr(self, 'name'):
-            print(f'Hello, human! My name is {self.name}')
-        else:
-            print('У робота нет имени')
+    def increment(self):
+        self.name +=1
 
-    def say_bye(self):
-        print('See u later alligator')
+    def display(self):
+        print(f'Текущее значение счетчика ={self.name}')
+    def reset(self):
+        self.name = 0
 
+c1 = Counter()
+c1.start_from()
+c1.increment()
+c1.display()
+c1.increment()
+c1.display()
+c1.reset()
+c1.display()
 
-c3po = Robot()
-c3po.say_hello()
-c3po.set_name('R2D2')
-c3po.say_hello()
-c3po.say_bye()
-
-r = Robot()
-r.set_name('Chappy')
-r.say_hello()
