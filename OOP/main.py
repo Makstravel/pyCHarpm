@@ -1,25 +1,14 @@
-class Robot:
-    name = ''
+class Zebra:
+    def __init__(self, white="Полоска белая", black="Полоска черная"):
+        self.white = white
+        self.black = black
 
-    def set_name(self, name):
-        self.name = name
+    def which_stripe(self):
+        print(self.white)
+        self.white, self.black = self.black, self.white
 
-    def say_hello(self, name):
-        if self.name = name:
+z1 = Zebra()
+z1.which_stripe() # печатает "Полоска белая"
+z1.which_stripe() # печатает "Полоска черная"
+z1.which_stripe()
 
-            print('Hello, human! My name is', name)
-        else:
-            print('У робота нет имени')
-
-    def say_bye(self):
-        print('See u later alligator')
-
-
-c3po = Robot()
-r2d2 = Robot()
-
-c3po.say_hello()
-c3po.say_bye()
-
-r2d2.say_hello()
-r2d2.say_bye()
