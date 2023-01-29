@@ -1,3 +1,8 @@
+CPUs: 10 core
+RAM: 32 GB
+Storage: 1 TB
+
+
 These are steps to set up Testnet Node in Service.
 
 1. Install Linux dependencies.
