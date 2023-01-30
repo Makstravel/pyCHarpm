@@ -6,9 +6,11 @@ class TriangleChecker:
 
     def is_triangle(self):
         line = (self.a, self.b, self.c)
-        if type(line) not in (int, float) or line<=0:
+        if not all(map(lambda x: type(x) in (int, float), (self.a, self.b, self.c))):
             return 1
-        if sum(self.a, self.b) > self.c or sum(self.b, self.c) > self.a or sum(self.a, self.c) > self.b:
+        if not all(map(lambda x: x > 0, (self.a, self.b, self.c))):
+            return 1
+        if self.a + self.b > self.c or self.b+self.c > self.a or self.a + self.c > self.b:
             return 2
         return 3
 
