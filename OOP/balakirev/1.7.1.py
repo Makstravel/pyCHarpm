@@ -1,5 +1,11 @@
 # Здесь объявляется класс Factory
-
+class Factory:
+    @staticmethod
+    def build_sequence(lst=[]):
+        return lst
+    @staticmethod
+    def build_number(string):
+        return int(string)
 class Loader:
     @staticmethod
     def parse_format(string, factory):

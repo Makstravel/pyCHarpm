@@ -1,22 +1,23 @@
-class Counter:
+import sys
 
-    def start_from(self, name=0):
-        self.name= name
+class StreamData:
+    def create(self, fields, lst_values):
+        if len(fields) != len(lst_values):
+            return False
+        for i, key in enumerate(fields):
+            setattr(self, key, lst_values[i])
 
-    def increment(self):
-        self.name +=1
+        return True
 
-    def display(self):
-        print(f'Текущее значение счетчика ={self.name}')
-    def reset(self):
-        self.name = 0
+class StreamReader:
+    FIELDS = ('id', 'title', 'pages')
 
-c1 = Counter()
-c1.start_from()
-c1.increment()
-c1.display()
-c1.increment()
-c1.display()
-c1.reset()
-c1.display()
+    def readlines(self):
+        lst_in = list(map(str.strip, sys.stdin.readlines()))  # считывание списка строк из входного потока
+        sd = StreamData()
+        res = sd.create(self.FIELDS, lst_in)
+        return sd, res
 
+
+sr = StreamReader()
+data, result = sr.readlines()
