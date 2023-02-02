@@ -1,15 +1,19 @@
-# Здесь объявляется класс Factory
-
-class Loader:
-    @staticmethod
-    def parse_format(string, factory):
-        seq = factory.build_sequence()
-        for sub in string.split(","):
-            item = factory.build_number(sub)
-            seq.append(item)
-
-        return seq
+t = {'ё': 'yo', 'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ж': 'zh',
+     'з': 'z', 'и': 'i', 'й': 'y', 'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n', 'о': 'o', 'п': 'p',
+     'р': 'r', 'с': 's', 'т': 't', 'у': 'u', 'ф': 'f', 'х': 'h', 'ц': 'c', 'ч': 'ch', 'ш': 'sh',
+     'щ': 'shch', 'ъ': '', 'ы': 'y', 'ь': '', 'э': 'e', 'ю': 'yu', 'я': 'ya'}
 
 
-# эти строчки не менять!
-res = Loader.parse_format("1, 2, 3, -5, 10", Factory)
+
+lst = ''
+def get_eng(s, sep='-'):
+    lst=''
+    for k in s.lower():
+        if t.get(k, k):
+            lst = lst + t.get(k, k)
+    return lst.replace(' ', sep)
+
+
+s = input()
+print(get_eng(s))
+print(get_eng(s, sep='+'))
