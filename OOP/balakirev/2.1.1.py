@@ -6,8 +6,6 @@ class Clock:
     def set_time(self, tm):
         if self.__check_time(tm):
             self.__time = tm
-        else:
-            raise ValueError('Некорректный формат времени')
 
     def get_time(self):
         return self.__time
