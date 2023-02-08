@@ -1,25 +1,29 @@
 class Clock:
-    def __init__(self, time=0):
-        self.__time = time
+    def __init__(self, tm):
+        self.__time = 0
+        self.set_time(tm)
 
     def set_time(self, tm):
-        if Clock.__check_time(tm) == True:
+        if self.__check_time(tm):
             self.__time = tm
+        else:
+            raise ValueError('Некорректный формат времени')
 
-    @classmethod
     def get_time(self):
-        Clock.__time = self.time
+        return self.__time
 
 
     @classmethod
-    def __check_time(self, tm):
-        self.tm = tm
-        if type(self.tm) in int and self.tm >=0 and self.tm < 100_000:
-            return True
-
+    def __check_time(cls, tm):
+        return type(tm) == int and 0 <= tm < 100_000
 
 
 
 clock = Clock(4530)
-clock.set_time(500)
-print(clock.get_time())
+clock.set_time(15)
+print(clock.get_time())  #15
+clock.set_time(100000)
+clock.set_time(-1)
+clock.set_time('2')
+clock.set_time(0.1)
+print(clock.get_time())  #15
