@@ -1,6 +1,12 @@
-emal = input()
-s = emal.find('@')
-if '.' in emal[s:]:
-    print('Yes')
-else:
-    raise ValueError('введите верный логин')
+class MyCallable:
+    def __init__(self):
+        self.count = 0
+
+    def __call__(self):
+        self.count += 1
+
+c = MyCallable()
+c()
+c()
+c()
+print(c.count)
