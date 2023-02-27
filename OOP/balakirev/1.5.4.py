@@ -10,7 +10,7 @@ class TriangleChecker:
             return 1
         if not all(map(lambda x: x > 0, (self.a, self.b, self.c))):
             return 1
-        if self.a + self.b > self.c or self.b+self.c > self.a or self.a + self.c > self.b:
+        if self.a, self.b) > self.c or sum(self.b, self.c) > self.a or sum(self.a, self.c) > self.b:
             return 2
         return 3
 

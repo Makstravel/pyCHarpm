@@ -14,8 +14,8 @@ class Ellipse:
         self.ep = (c, d)
 
 
-elements = [(Line, Rect, Ellipse) [randint(0, 2)](1, 2, 3, 4) for n in range(217)]
-
+elements = [(Line, Rect, Ellipse)[randint(0, 2)](1, 2, 3, 4) for n in range(217)]
+print()
 for obj in elements:
     if isinstance(obj, Line):
         obj.sp = obj.ep = 0, 0
