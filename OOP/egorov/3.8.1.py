@@ -1,19 +1,20 @@
 class Building:
 
-    def __init__(self, value):
-        self.value = value
+    def __init__(self, num_floors):
+        self.num_floors = num_floors
+        self.floors = [None] * num_floors
 
-    def __setitem__(self, key, value):
+    def __setitem__(self, floor, company):
+        if self.floors[floor] is not None:
+            print(f"Floor {floor} is already occupied by {self.floors[floor]}. Replacing with {company}.")
+        self.floors[floor] = company
 
     def __getitem__(self, item):
-        if 0 <= item < len(self.value):
-            return self.value[item]
-        else:
-            return None
+        return self.floors[item]
 
-    def __delitem__(self, key):
-        if 0 <= key < len(self.value):
-            del self.value[key]
+
+    def __delitem__(self, floor):
+        self.floors[floor] = None
 
 
 iron_building = Building(22)  # Создаем здание с 22 этажами
