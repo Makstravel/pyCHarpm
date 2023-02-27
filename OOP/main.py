@@ -1,12 +1,15 @@
-class MyCallable:
-    def __init__(self):
-        self.count = 0
+class Animal:
+    pass
 
-    def __call__(self):
-        self.count += 1
 
-c = MyCallable()
-c()
-c()
-c()
-print(c.count)
+class Dog(Animal):
+    pass
+
+
+class Fish:
+    pass
+
+print(issubclass(Animal, Dog))
+print(issubclass(Dog, Animal))
+print(issubclass(Fish, Dog))
+print(issubclass(Dog, Fish))
