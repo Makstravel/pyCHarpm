@@ -9,10 +9,7 @@ class Deck:
     suits = ['Clubs', 'Diamonds', 'Hearts', 'Spades']
 
     def __init__(self):
-        self._cards = [Card(rank, suit) for suit in self.suits for rank in self.ranks]
-
-    def __iter__(self):
-        return iter(self._cards)
+        self.cards = [Card(rank, suit) for suit in self.suits for rank in self.ranks]
 
 
 deck = Deck()
