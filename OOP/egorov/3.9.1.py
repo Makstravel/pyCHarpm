@@ -16,5 +16,5 @@ class Deck:
 
 
 deck = Deck()
-for card in deck:
-    print(card)
+for card in deck.cards:
+    print(card.rank, card.suit)
