@@ -1,15 +1,33 @@
-class Animal:
-    pass
+class H:
+    s = 'class H'
 
 
-class Dog(Animal):
-    pass
+class G(H):
+    s = 'G'
 
 
-class Fish:
-    pass
+class F(H):
+    s = 'F'
 
-print(issubclass(Animal, Dog))
-print(issubclass(Dog, Animal))
-print(issubclass(Fish, Dog))
-print(issubclass(Dog, Fish))
+
+class D(H):
+    s = 'D'
+
+
+class E(H):
+    s = 'E'
+
+
+class B(D, E):
+    s = 'B'
+
+
+class C(F, G):
+    s = 'C'
+
+
+class A(B, C):
+    s = 'A'
+
+
+print(A.__mro__)
