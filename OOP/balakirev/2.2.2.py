@@ -1,12 +1,12 @@
 class WindowDlg:
 
-    def __init__(self, title, width, heigth):
+    def __init__(self, title, width, height):
         self.__title = title
         self.__width = width
-        self.__heigth = heigth
+        self.__height = height
 
     def show(self):
-        print(f'{self.__title}: {self.__width}, {self.__heigth}')
+        print(f'{self.__title}: {self.__width}, {self.__height}')
 
     @property
     def width(self):
@@ -19,11 +19,11 @@ class WindowDlg:
             self.show()
 
     @property
-    def heigth(self):
-        return self.__heigth
+    def height(self):
+        return self.__height
 
-    @heigth.setter
-    def heigth(self, heigth):
-        if 0 <= heigth <= 10_000:
-            self.__heigth = heigth
+    @height.setter
+    def height(self, height):
+        if 0 <= height <= 10_000:
+            self.__height = height
             self.show()
