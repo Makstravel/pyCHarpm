@@ -1,5 +1,3 @@
-import string
-
 
 class Registration:
 
@@ -8,15 +6,34 @@ class Registration:
         self.__password = password
 
     @property
+    def login(self):
+        return self.__login
+
+    @login.setter
+    def login(self, value):
+        if '@' not in value:
+            raise ValueError("Логин должен содержать один символ '@'")
+        if '.' not in value[value.find('@'):]:
+            raise ValueError("Логин должен содержать символ '.'")
+        self.__login = value
+
+    @property
     def password(self):
         return self.__password
 
     @password.setter
     def password(self, value):
-        if not value == str:
+        if not isinstance(value, str):
             raise TypeError("Пароль должен быть строкой")
-        if len(value) < 5 and len(value) > 11:
+        if len(value) < 5 or len(value) > 11:
             raise ValueError('Пароль должен быть длиннее 4 и меньше 12 символов')
+        if not any(_.isdigit() for _ in value):
+            raise ValueError('Пароль должен содержать хотя бы одну цифру')
+        if not any(_.isupper() for _ in value) or not any(_.islower() for _ in value):
+            raise ValueError('Пароль должен содержать хотя бы один символ верхнего и нижнего регистра')
+        if not all(_.isalpha() for _ in value):
+            raise ValueError('Пароль должен содержать только латинский алфавит')
+        self.check_password_dictionary(value)
         self.__password = value
 
     @staticmethod
@@ -31,7 +48,7 @@ class Registration:
 
     @staticmethod
     def is_include_only_latin(value):
-        if not any(_.ascii_letters for _ in value) and any(_.isupper() for _ in value) \
+        if any(_.isalpha() for _ in value) and any(_.isupper() for _ in value) \
                 and any(_.islower() for _ in value):
             raise ValueError('Пароль должен содержать только латинский алфавит')
 
@@ -39,7 +56,7 @@ class Registration:
     def check_password_dictionary(value):
         with open('easy_passwords.txt', 'r') as file:
             for i in file.read().strip():
-                if not value == i:
+                if value == i:
                     ValueError('Ваш пароль содержится в списке самых легких')
 
 
