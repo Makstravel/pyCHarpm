@@ -1,15 +1,13 @@
-import sys
-class Book:
+class Model:
 
-    def __init__(self, title, author, pages):
-        self.title = title
-        self.author = author
-        self.pages = pages
+    def __init__(self):
+        self.value = None
+
+    def query(self, **kwargs):
+        self.value = kwargs
 
     def __str__(self):
-        return f'Книга: {self.title}; {self.author}; {self.pages}'
-
-
-lst_in = list(map(str.strip, sys.stdin.readlines()))
-book = Book(lst_in[0], lst_in[1], int(lst_in[2]))
-print(book)
+        if self.value == None:
+            return f'Model'
+        else:
+            return 'Model: ' + ', '.join([f'{key} = {value}' for key, value in self.value.items()])
